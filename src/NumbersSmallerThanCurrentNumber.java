@@ -3,7 +3,6 @@ import java.util.Arrays;
 public class NumbersSmallerThanCurrentNumber {
     public static void main(String[] args) {
         int[] num = new int[]{8,1,2,2,3};
-
         System.out.println(Arrays.toString(smallerThanCurr(num)));
     }
 
