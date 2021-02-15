@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Set;
 
 public class FindingDuplicates {
     public static void main(String[] args) {
@@ -24,26 +22,17 @@ public class FindingDuplicates {
                 dupMap.put(nums[i], 1);
             }
         }
-
-        // get keys
-        Set<Integer> keySet = dupMap.keySet();
-
-        // get values
-        Collection<Integer> valueSet = dupMap.values();
-
+        
         // create arraylist of keys
-        ArrayList<Integer> dupArrList = new ArrayList<>(keySet);
+        ArrayList<Integer> dupArrList = new ArrayList<>();
 
-        // create array of values
-          ArrayList<Integer> dupValuesList = new ArrayList<>(valueSet);
-
-//        // iterate through map and add keys
-//        dupMap.forEach((k, v) -> {
-//            if (v > 1) {
-//                dupArrList.add(k);
-//            }
-//          });
-        return dupValuesList;
+        // iterate through map and add keys
+        dupMap.forEach((k, v) -> {
+            if (v > 1) {
+                dupArrList.add(k);
+            }
+          });
+        return dupArrList;
 
     }
 }
