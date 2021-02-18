@@ -22,7 +22,7 @@ public class NumbersSmallerThanCurrentNumber {
 
                 //if i > j, increment counter and store it in newArr at pos i
                 if (arr[i] > arr[j]) {
-                    counter++;
+                    counter++; // count number times i > j
                     newArr[i] = counter;
                 }
             }

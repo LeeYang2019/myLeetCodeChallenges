@@ -45,7 +45,6 @@ public class RunningSum1DArray {
         // ex: [1,2,3,4]
         // loop through every element of array
         for (int i = 1; i < nums.length; i++) { // i starts at pos 1, not 0
-
             //add the last value in last pos to curr pos value
             nums[i] += nums[i - 1]; // [1, 2+1, 3+3, 4+6]
         }
