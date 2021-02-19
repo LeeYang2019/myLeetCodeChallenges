@@ -11,7 +11,7 @@ public class CountNumSmallerThanSelf {
         int[] num = new int[]{5,2,6,1};
         //System.out.println(Arrays.toString(solutionOne(num)));
         //System.out.println(solutionTwo(num));
-        System.out.println(solutionThree(num));
+        System.out.println(solutionThree(num)); //expect [2,1,1,0]
     }
 
     public static int[] solutionOne(int[] nums) {
@@ -58,40 +58,17 @@ public class CountNumSmallerThanSelf {
         for(int i = nums.length -1; i>= 0; i--) {
             //last value case
             if(sorted.isEmpty()) {
-                System.out.println("code enters here first");
                 sorted.add(nums[i]); //add last element
                 result.add(0); //add 0
-                System.out.println("sorted: " + sorted);
-                System.out.println("result: " + result);
             } else if(nums[i]>sorted.get(sorted.size()-1)){
-                System.out.println("-------------------------");
-                System.out.println("code enters here second");
-                System.out.println("nums[i]: " + nums[i]);
-                System.out.println("sorted.get(sorted.size()-1): " + sorted.get(sorted.size() -1 ));
-                System.out.println("nums[i] is greater than sorted.get(sorted.size()-1), is added to end");
                 sorted.add(sorted.size(), nums[i]); //add to end
-                System.out.println("sorted: " + sorted);
                 result.add(sorted.size()-1); //add last item of sorted
-                System.out.println("result: " + result);
             } else {
-                System.out.println("----------------------");
-                System.out.println("code enters here third");
                 int l=0; //beginning
                 int r=sorted.size()-1; //end
 
-                System.out.println("sorted: " + sorted);
-                System.out.println("result: " + result);
-
-                System.out.println("r : " + (sorted.size()-1));
-
                 while(l<r){
-                    System.out.println("enter while loop, l < r" );
                     int m = l + (r-l)/2;
-
-                    System.out.println("l: " + l + ", r: " + r + ", m: " + m);
-                    System.out.println("nums[i] : " + nums[i]);
-                    System.out.println("sorted.get(m) : " + sorted.get(m));
-
                     if(nums[i]>sorted.get(m)){
                         l=m+1;
                     }else{
@@ -104,13 +81,6 @@ public class CountNumSmallerThanSelf {
             }
 
         }
-        System.out.println("----------------------");
-        System.out.println("Final: ");
-        System.out.println("sorted: " + sorted);
-        System.out.println("result: " + result);
-
-        System.out.println("----------------------");
-        System.out.print("Reversed: ");
         Collections.reverse(result);
         return result;
     }
